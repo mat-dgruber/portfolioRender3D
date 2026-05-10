@@ -1,0 +1,43 @@
+<section id="depoimentos" class="py-32 bg-brand-surface border-y border-brand-border overflow-hidden">
+  <div class="container mx-auto px-6">
+    <app-section-title 
+      title="Depoimentos" 
+      subtitle="O que dizem nossos parceiros."
+      class="mb-20 text-center"
+    ></app-section-title>
+
+    <p-carousel 
+      [value]="testimonials()" 
+      [numVisible]="2" 
+      [numScroll]="1" 
+      [circular]="true" 
+      [responsiveOptions]="responsiveOptions"
+      [autoplayInterval]="5000"
+    >
+      <ng-template let-item pTemplate="item">
+        <div class="px-4 h-full">
+          <div class="bg-brand-bg border border-brand-border p-8 md:p-12 h-full flex flex-col justify-between group hover:border-brand-accent/50 transition-all duration-500 shadow-2xl">
+            <div>
+              <i class="pi pi-quote-right text-brand-accent/20 text-5xl mb-6 block"></i>
+              <p class="text-brand-text text-lg md:text-xl font-light leading-relaxed italic mb-8">
+                "{{ item.text }}"
+              </p>
+            </div>
+            
+            <div class="flex items-center gap-4 pt-8 border-t border-brand-border">
+              <img 
+                [src]="item.image" 
+                [alt]="item.name" 
+                class="w-12 h-12 rounded-full grayscale group-hover:grayscale-0 transition-all duration-500"
+              />
+              <div class="text-left">
+                <h4 class="text-brand-text font-bold uppercase tracking-widest text-xs">{{ item.name }}</h4>
+                <span class="text-brand-muted text-[10px] uppercase tracking-wider">{{ item.role }}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </ng-template>
+    </p-carousel>
+  </div>
+</section>

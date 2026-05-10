@@ -1,10 +1,12 @@
 import { Component } from '@angular/core';
 import { AccordionModule } from 'primeng/accordion';
 
+import { SectionTitleComponent } from '../../../../shared/components/section-title/section-title';
+
 @Component({
   selector: 'app-faq',
   standalone: true,
-  imports: [AccordionModule],
+  imports: [AccordionModule, SectionTitleComponent],
   templateUrl: './faq.html',
   styles: [`
     :host { display: block; }

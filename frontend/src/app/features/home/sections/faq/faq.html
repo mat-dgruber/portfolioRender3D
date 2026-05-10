@@ -1,10 +1,11 @@
 <section id="faq" class="py-32 bg-brand-surface border-y border-brand-border">
   <div class="container mx-auto px-6">
     <div class="max-w-3xl mx-auto">
-      <div class="text-center mb-16">
-        <span class="text-brand-accent text-xs uppercase tracking-[0.4em] mb-4 block font-bold">Dúvidas</span>
-        <h2 class="text-3xl md:text-5xl font-light text-brand-text">Respostas frequentes.</h2>
-      </div>
+      <app-section-title 
+        title="Dúvidas" 
+        subtitle="Respostas frequentes."
+        class="mb-16 text-center"
+      ></app-section-title>
 
       <p-accordion [multiple]="true" class="gallery-accordion">
         <p-accordion-panel [value]="0">
