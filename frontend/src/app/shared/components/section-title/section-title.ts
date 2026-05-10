@@ -1,11 +1,13 @@
-import { Component } from '@angular/core';
+import { Component, input } from '@angular/core';
 
 @Component({
   selector: 'app-section-title',
-  imports: [],
+  standalone: true,
   templateUrl: './section-title.html',
-  styles: ``,
+  styles: [`:host { display: block; }`]
 })
-export class SectionTitle {
-
+export class SectionTitleComponent {
+  title = input.required<string>();
+  subtitle = input<string>();
+  align = input<'left' | 'center' | 'right'>('center');
 }

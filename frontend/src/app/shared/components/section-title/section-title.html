@@ -1,1 +1,11 @@
-<p>section-title works!</p>
+<div [class.text-left]="align() === 'left'" [class.text-center]="align() === 'center'" [class.text-right]="align() === 'right'">
+  <span class="text-brand-accent text-xs uppercase tracking-[0.4em] mb-4 block font-bold">
+    {{ title() }}
+  </span>
+  <h2 class="text-3xl md:text-5xl font-light text-brand-text mb-6 leading-tight">
+    {{ subtitle() }}
+  </h2>
+  @if (align() === 'left') {
+    <div class="h-px w-20 bg-brand-accent/30 mt-4 mb-8"></div>
+  }
+</div>
