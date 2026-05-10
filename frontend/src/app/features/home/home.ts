@@ -8,7 +8,6 @@ import { MethodologyComponent } from './sections/methodology/methodology';
 import { ClientsComponent } from './sections/clients/clients';
 import { FaqComponent } from './sections/faq/faq';
 import { TestimonialsComponent } from './sections/testimonials/testimonials';
-import { ContactComponent } from './sections/contact/contact';
 import { ParallaxSectionComponent } from '../../shared/components/parallax-section/parallax-section';
 
 @Component({
@@ -24,8 +23,7 @@ import { ParallaxSectionComponent } from '../../shared/components/parallax-secti
     ClientsComponent,
     ParallaxSectionComponent,
     FaqComponent,
-    TestimonialsComponent,
-    ContactComponent
+    TestimonialsComponent
   ],
   template: `
     <app-hero id="hero"></app-hero>
@@ -65,7 +63,13 @@ import { ParallaxSectionComponent } from '../../shared/components/parallax-secti
 
     <app-testimonials></app-testimonials>
     <app-faq id="faq"></app-faq>
-    <app-contact id="contato"></app-contact>
+
+    <app-parallax-section imageUrl="assets/images/parallax/luxury-detail.png" height="50vh">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-3xl md:text-5xl font-light text-white tracking-tighter shadow-text">Sua visão, nossa maestria técnica.</h2>
+        <p class="text-white/80 text-lg tracking-widest uppercase mt-4">Excelência que transforma resultados.</p>
+      </div>
+    </app-parallax-section>
   `,
   styles: [`:host { display: block; }`]
 })
