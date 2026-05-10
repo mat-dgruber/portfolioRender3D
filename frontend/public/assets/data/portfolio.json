@@ -40,5 +40,47 @@
     "title": "Tour Virtual Garden",
     "src": "assets/images/portfolio/animation-still.png",
     "thumb": "assets/images/portfolio/animation-still.png"
+  },
+  {
+    "id": 7,
+    "category": "Exteriores",
+    "title": "Área de Lazer com Piscina",
+    "src": "assets/images/portfolio/pool-luxury.png",
+    "thumb": "assets/images/portfolio/pool-luxury.png"
+  },
+  {
+    "id": 8,
+    "category": "Interiores",
+    "title": "Suíte Master Vista Mar",
+    "src": "assets/images/portfolio/suite-master.png",
+    "thumb": "assets/images/portfolio/suite-master.png"
+  },
+  {
+    "id": 9,
+    "category": "Interiores",
+    "title": "Office Corporate High-Tech",
+    "src": "assets/images/portfolio/office-corporate.png",
+    "thumb": "assets/images/portfolio/office-corporate.png"
+  },
+  {
+    "id": 10,
+    "category": "Interiores",
+    "title": "Living Room Integrado",
+    "src": "assets/images/portfolio/living-integrated.png",
+    "thumb": "assets/images/portfolio/living-integrated.png"
+  },
+  {
+    "id": 11,
+    "category": "Exteriores",
+    "title": "Condomínio de Luxo",
+    "src": "assets/images/portfolio/condo-luxury.png",
+    "thumb": "assets/images/portfolio/condo-luxury.png"
+  },
+  {
+    "id": 12,
+    "category": "Exteriores",
+    "title": "Fachada Comercial Vidrada",
+    "src": "assets/images/portfolio/facade-commercial.png",
+    "thumb": "assets/images/portfolio/facade-commercial.png"
   }
 ]
