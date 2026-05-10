@@ -1,30 +1,26 @@
-<header 
-  class="fixed top-0 left-0 w-full z-50 transition-all duration-300"
-  [class.bg-brand-bg/80]="isScrolled()"
-  [class.backdrop-blur-md]="isScrolled()"
-  [class.py-4]="isScrolled()"
-  [class.py-6]="!isScrolled()"
->
-  <nav class="container mx-auto px-6 flex justify-between items-center">
+  <nav 
+    class="fixed top-6 left-1/2 -translate-x-1/2 z-50 transition-all duration-500 w-[90%] max-w-5xl"
+    [class.scale-95]="isScrolled()"
+  >
+    <div 
+      class="bg-brand-surface/40 backdrop-blur-xl border border-white/10 rounded-full px-8 py-3 flex justify-between items-center shadow-2xl shadow-black/50"
+    >
     <div class="text-brand-accent text-2xl font-light tracking-widest uppercase cursor-pointer" (click)="scrollTo('hero')">
       Studio<span class="font-bold">Render</span>
     </div>
     
     <div class="hidden md:flex gap-8 items-center text-sm tracking-widest uppercase text-brand-text/80">
+      <a (click)="scrollTo('servicos')" class="hover:text-brand-accent transition-colors cursor-pointer">Serviços</a>
       <a (click)="scrollTo('portfolio')" class="hover:text-brand-accent transition-colors cursor-pointer">Portfólio</a>
-      <a (click)="scrollTo('processo')" class="hover:text-brand-accent transition-colors cursor-pointer">Processo</a>
+      <a (click)="scrollTo('metodologia')" class="hover:text-brand-accent transition-colors cursor-pointer">Método</a>
       <a (click)="scrollTo('faq')" class="hover:text-brand-accent transition-colors cursor-pointer">FAQ</a>
       <button 
         (click)="scrollTo('contato')"
-        class="border border-brand-accent px-6 py-2 text-brand-accent hover:bg-brand-accent hover:text-brand-bg transition-all duration-300"
+        class="bg-brand-accent text-brand-bg px-6 py-2 rounded-full font-medium hover:bg-white transition-all duration-300 transform hover:scale-105 active:scale-95"
       >
         Orçamento
       </button>
     </div>
 
-    <!-- Mobile Menu Toggle (Simplified for MVP) -->
-    <div class="md:hidden text-brand-accent">
-      <i class="pi pi-bars text-xl"></i>
     </div>
   </nav>
-</header>
