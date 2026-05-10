@@ -3,19 +3,21 @@
 ## 1. Tech Stack
 
 ### Frontend
-| Tecnologia | Versão | Motivo |
-|---|---|---|
-| Angular | 21+ | Framework principal — standalone components, signals, performance |
+
+| Tecnologia   | Versão | Motivo                                                                      |
+| ------------ | ------ | --------------------------------------------------------------------------- |
+| Angular      | 21+    | Framework principal — standalone components, signals, performance           |
 | Tailwind CSS | 3.4.17 | Estilização utilitária, responsividade nativa, sem CSS custom desnecessário |
-| TypeScript | strict | Tipagem forte, zero `any` |
-| PrimeNG | 21+ | Somente quando necessário (Carousel, Accordion FAQ) |
+| TypeScript   | strict | Tipagem forte, zero `any`                                                   |
+| PrimeNG      | 21+    | Somente quando necessário (Carousel, Accordion FAQ)                         |
 
 ### Backend (Opcional — Envio de Formulário)
-| Tecnologia | Versão | Motivo |
-|---|---|---|
-| Python | 3.14+ | Linguagem padrão do stack |
-| FastAPI | latest | API REST leve para endpoint `/contact` |
-| uv | latest | Gerenciador de pacotes — substitui pip/poetry |
+
+| Tecnologia | Versão | Motivo                                        |
+| ---------- | ------ | --------------------------------------------- |
+| Python     | 3.14+  | Linguagem padrão do stack                     |
+| FastAPI    | latest | API REST leve para endpoint `/contact`        |
+| uv         | latest | Gerenciador de pacotes — substitui pip/poetry |
 
 > **Nota:** Para MVP, considerar EmailJS (zero backend) antes de levantar FastAPI. Escalar para FastAPI se houver necessidade de lógica adicional (CRM, notificações, rate limiting).
 
@@ -134,11 +136,13 @@ render-studio/
 ```
 
 **Alternativa MVP (sem backend):**
+
 ```
 [ContactService.submit(form)] → EmailJS API (client-side)
 ```
 
 ### Conteúdo Estático
+
 - Portfólio: imagens WebP servidas via Firebase Hosting CDN
 - Não há banco de dados — todo conteúdo é hardcoded nos componentes ou em arquivos JSON estáticos em `assets/`
 
@@ -146,22 +150,22 @@ render-studio/
 
 ## 4. Component Map
 
-| Componente | Localização | Responsabilidade |
-|---|---|---|
-| `AppComponent` | `app/` | Shell raiz — renderiza header, router-outlet, footer, FAB |
-| `HeaderComponent` | `layout/header/` | Logo, nav âncoras, CTA WhatsApp/contato — fixo no topo |
-| `FooterComponent` | `layout/footer/` | Contato, redes sociais, copyright |
-| `HomeComponent` | `features/home/` | Orquestra todas as sections da single page |
-| `HeroComponent` | `features/home/sections/hero/` | Imagem/vídeo de fundo, headline, CTA principal |
-| `ProblemComponent` | `features/home/sections/problem/` | Texto + visual do problema/solução |
-| `PortfolioComponent` | `features/home/sections/portfolio/` | Grid com filtro por categoria + lightbox |
-| `BeforeAfterComponent` | `features/home/sections/before-after/` | Slider interativo planta vs. render |
-| `ProcessComponent` | `features/home/sections/process/` | 4 etapas do processo ilustradas |
-| `TestimonialsComponent` | `features/home/sections/testimonials/` | PrimeNG Carousel com depoimentos |
-| `FaqComponent` | `features/home/sections/faq/` | PrimeNG Accordion com perguntas |
-| `ContactComponent` | `features/home/sections/contact/` | ReactiveForm + integração ContactService |
-| `WhatsappFabComponent` | `shared/components/whatsapp-fab/` | Botão flutuante fixo — link direto WhatsApp |
-| `SectionTitleComponent` | `shared/components/section-title/` | Título + subtítulo reutilizável por seção |
+| Componente              | Localização                            | Responsabilidade                                          |
+| ----------------------- | -------------------------------------- | --------------------------------------------------------- |
+| `AppComponent`          | `app/`                                 | Shell raiz — renderiza header, router-outlet, footer, FAB |
+| `HeaderComponent`       | `layout/header/`                       | Logo, nav âncoras, CTA WhatsApp/contato — fixo no topo    |
+| `FooterComponent`       | `layout/footer/`                       | Contato, redes sociais, copyright                         |
+| `HomeComponent`         | `features/home/`                       | Orquestra todas as sections da single page                |
+| `HeroComponent`         | `features/home/sections/hero/`         | Imagem/vídeo de fundo, headline, CTA principal            |
+| `ProblemComponent`      | `features/home/sections/problem/`      | Texto + visual do problema/solução                        |
+| `PortfolioComponent`    | `features/home/sections/portfolio/`    | Grid com filtro por categoria + lightbox                  |
+| `BeforeAfterComponent`  | `features/home/sections/before-after/` | Slider interativo planta vs. render                       |
+| `ProcessComponent`      | `features/home/sections/process/`      | 4 etapas do processo ilustradas                           |
+| `TestimonialsComponent` | `features/home/sections/testimonials/` | PrimeNG Carousel com depoimentos                          |
+| `FaqComponent`          | `features/home/sections/faq/`          | PrimeNG Accordion com perguntas                           |
+| `ContactComponent`      | `features/home/sections/contact/`      | ReactiveForm + integração ContactService                  |
+| `WhatsappFabComponent`  | `shared/components/whatsapp-fab/`      | Botão flutuante fixo — link direto WhatsApp               |
+| `SectionTitleComponent` | `shared/components/section-title/`     | Título + subtítulo reutilizável por seção                 |
 
 ---
 
@@ -172,11 +176,11 @@ render-studio/
 API_BASE_URL=https://api.seudominio.com.br   # URL base da API FastAPI
 
 # Backend (.env)
-SMTP_HOST=smtp.gmail.com
-SMTP_PORT=587
+SMTP_HOST=smtp.serve.com
+SMTP_PORT=000
 SMTP_USER=seuemail@gmail.com
 SMTP_PASSWORD=sua_senha_de_app
-NOTIFICATION_EMAIL=contato@estudiorenders.com.br
+NOTIFICATION_EMAIL=email@dominiodaempresa.com.br
 ALLOWED_ORIGINS=https://seudominio.com.br,http://localhost:4200
 ```
 
@@ -185,17 +189,20 @@ ALLOWED_ORIGINS=https://seudominio.com.br,http://localhost:4200
 ## 6. Deployment
 
 ### Frontend
+
 - **Host:** Firebase Hosting
 - **CI/CD:** GitHub Actions
   - Push em `main` → build Angular → deploy automático
 - **Domínio:** Configurado via GoDaddy DNS → Firebase
 
 ### Backend (se necessário)
+
 - **Host:** Railway ou Render.com (tier gratuito para MVP)
 - **Processo:** `uvicorn app.main:app --host 0.0.0.0 --port 8000`
 - **Alternativa zero-backend:** EmailJS (não requer servidor)
 
 ### Pipeline simplificado
+
 ```
 git push origin main
         ↓
