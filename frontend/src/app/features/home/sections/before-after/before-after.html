@@ -8,7 +8,7 @@
       </p>
     </div>
 
-    <div class="relative max-w-5xl mx-auto aspect-video cursor-ew-resize select-none overflow-hidden group shadow-2xl rounded-lg"
+    <div class="relative max-w-5xl mx-auto aspect-video cursor-ew-resize select-none overflow-hidden group shadow-2xl rounded-3xl"
          (mousemove)="onMove($event)"
          (touchmove)="onMove($event)">
       
@@ -54,10 +54,10 @@
       />
 
       <!-- Labels -->
-      <div class="absolute bottom-6 left-6 z-40 bg-brand-bg/60 backdrop-blur-sm px-4 py-2 text-[10px] uppercase tracking-widest text-brand-text border border-brand-accent/20 rounded pointer-events-none">
+      <div class="absolute bottom-6 left-6 z-40 bg-brand-bg/60 backdrop-blur-sm px-4 py-2 text-[10px] uppercase tracking-widest text-brand-text border border-brand-accent/20 rounded-full pointer-events-none">
         Original
       </div>
-      <div class="absolute bottom-6 right-6 z-40 bg-brand-bg/60 backdrop-blur-sm px-4 py-2 text-[10px] uppercase tracking-widest text-brand-accent border border-brand-accent/20 rounded pointer-events-none">
+      <div class="absolute bottom-6 right-6 z-40 bg-brand-bg/60 backdrop-blur-sm px-4 py-2 text-[10px] uppercase tracking-widest text-brand-accent border border-brand-accent/20 rounded-full pointer-events-none">
         Renderized
       </div>
     </div>

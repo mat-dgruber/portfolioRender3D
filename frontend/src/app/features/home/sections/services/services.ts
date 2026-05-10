@@ -27,7 +27,7 @@ interface Service {
             *ngFor="let service of services; let i = index"
             class="group relative flex flex-col md:flex-row gap-8 items-center bg-brand-surface/30 p-8 rounded-3xl border border-white/5 hover:border-brand-accent/30 transition-all duration-500"
           >
-            <div class="w-full md:w-1/2 aspect-square overflow-hidden rounded-2xl">
+            <div class="w-full md:w-1/2 aspect-square overflow-hidden rounded-3xl">
               <img 
                 [src]="service.image" 
                 [alt]="service.title"
