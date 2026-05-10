@@ -1,0 +1,91 @@
+<section id="contato" class="py-32 bg-brand-bg relative overflow-hidden">
+  <!-- Subtle decoration -->
+  <div class="absolute -top-24 -right-24 w-96 h-96 bg-brand-accent/5 rounded-full blur-3xl"></div>
+
+  <div class="container mx-auto px-6 relative z-10">
+    <div class="grid lg:grid-cols-2 gap-20 items-start">
+      <div>
+        <span class="text-brand-accent text-xs uppercase tracking-[0.4em] mb-4 block font-bold">Orçamento</span>
+        <h2 class="text-4xl md:text-6xl font-light text-brand-text mb-8 leading-tight">
+          Pronto para elevar seu próximo <span class="italic">projeto?</span>
+        </h2>
+        <p class="text-brand-muted text-lg mb-12 max-w-md">
+          Preencha o formulário ao lado ou entre em contato diretamente pelo WhatsApp para uma resposta imediata.
+        </p>
+
+        <div class="flex flex-col gap-6">
+          <div class="flex items-center gap-4 text-brand-text group cursor-pointer">
+            <div class="w-12 h-12 bg-brand-surface border border-brand-accent/20 rounded flex items-center justify-center group-hover:bg-brand-accent group-hover:text-brand-bg transition-all">
+              <i class="pi pi-envelope"></i>
+            </div>
+            <span>contato@estudiorender.com.br</span>
+          </div>
+          <div class="flex items-center gap-4 text-brand-text group cursor-pointer">
+            <div class="w-12 h-12 bg-brand-surface border border-brand-accent/20 rounded flex items-center justify-center group-hover:bg-brand-accent group-hover:text-brand-bg transition-all">
+              <i class="pi pi-phone"></i>
+            </div>
+            <span>+55 (11) 99999-9999</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-brand-surface border border-brand-border p-8 md:p-12 shadow-2xl">
+        <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="space-y-6">
+          <div class="space-y-2">
+            <label for="name" class="text-xs uppercase tracking-widest text-brand-muted">Nome Completo</label>
+            <input 
+              type="text" id="name" formControlName="name"
+              class="w-full bg-brand-bg border border-brand-border px-4 py-3 text-brand-text focus:outline-none focus:border-brand-accent transition-colors"
+            />
+          </div>
+
+          <div class="grid md:grid-cols-2 gap-6">
+            <div class="space-y-2">
+              <label for="email" class="text-xs uppercase tracking-widest text-brand-muted">E-mail</label>
+              <input 
+                type="email" id="email" formControlName="email"
+                class="w-full bg-brand-bg border border-brand-border px-4 py-3 text-brand-text focus:outline-none focus:border-brand-accent transition-colors"
+              />
+            </div>
+            <div class="space-y-2">
+              <label for="phone" class="text-xs uppercase tracking-widest text-brand-muted">Telefone</label>
+              <input 
+                type="tel" id="phone" formControlName="phone"
+                class="w-full bg-brand-bg border border-brand-border px-4 py-3 text-brand-text focus:outline-none focus:border-brand-accent transition-colors"
+              />
+            </div>
+          </div>
+
+          <div class="space-y-2">
+            <label for="type" class="text-xs uppercase tracking-widest text-brand-muted">Tipo de Projeto</label>
+            <select 
+              id="type" formControlName="type"
+              class="w-full bg-brand-bg border border-brand-border px-4 py-3 text-brand-text focus:outline-none focus:border-brand-accent transition-colors appearance-none"
+            >
+              <option value="interiores">Interiores</option>
+              <option value="exteriores">Exteriores</option>
+              <option value="animacao">Animação 3D</option>
+              <option value="comercial">Comercial / Incorporação</option>
+            </select>
+          </div>
+
+          <div class="space-y-2">
+            <label for="message" class="text-xs uppercase tracking-widest text-brand-muted">Mensagem</label>
+            <textarea 
+              id="message" formControlName="message" rows="4"
+              class="w-full bg-brand-bg border border-brand-border px-4 py-3 text-brand-text focus:outline-none focus:border-brand-accent transition-colors resize-none"
+            ></textarea>
+          </div>
+
+          <button 
+            type="submit"
+            [disabled]="contactForm.invalid || loading()"
+            class="w-full bg-brand-accent text-brand-bg py-4 text-sm font-bold uppercase tracking-[0.2em] hover:bg-white disabled:opacity-50 disabled:cursor-not-allowed transition-all"
+          >
+            {{ loading() ? 'Enviando...' : 'Solicitar Orçamento' }}
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,64 @@
+<section id="portfolio" class="py-32 bg-brand-bg">
+  <div class="container mx-auto px-6">
+    <div class="max-w-4xl mx-auto text-center mb-20">
+      <span class="text-brand-accent text-xs uppercase tracking-[0.4em] mb-4 block font-bold">Portfólio</span>
+      <h2 class="text-3xl md:text-5xl font-light text-brand-text mb-12 italic text-center">Excelência em cada pixel.</h2>
+      
+      <!-- Filters -->
+      <div class="flex flex-wrap justify-center gap-4 md:gap-8 mb-16">
+        <button 
+          *ngFor="let cat of categories"
+          (click)="setFilter(cat)"
+          [class.text-brand-accent]="activeFilter() === cat"
+          [class.border-brand-accent]="activeFilter() === cat"
+          class="text-[10px] md:text-xs uppercase tracking-[0.2em] py-2 border-b-2 border-transparent hover:text-brand-accent transition-all duration-300"
+        >
+          {{ cat }}
+        </button>
+      </div>
+    </div>
+
+    <!-- Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div 
+        *ngFor="let item of filteredItems()"
+        (click)="openLightbox(item)"
+        class="relative aspect-[4/3] overflow-hidden cursor-pointer group bg-brand-surface border border-brand-border"
+      >
+        <img 
+          [src]="item.thumb" 
+          [alt]="item.title"
+          class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-80 group-hover:opacity-100"
+          loading="lazy"
+        />
+        <div class="absolute inset-0 bg-brand-bg/60 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-8">
+          <span class="text-brand-accent text-[10px] uppercase tracking-widest mb-2">{{ item.category }}</span>
+          <h3 class="text-brand-text text-lg font-light tracking-tight">{{ item.title }}</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Lightbox -->
+  <div 
+    *ngIf="selectedImage() as item"
+    class="fixed inset-0 z-[1000] bg-brand-bg/95 flex items-center justify-center p-4 md:p-12 animate-in fade-in duration-300"
+    (click)="closeLightbox()"
+  >
+    <button class="absolute top-8 right-8 text-brand-text text-4xl hover:text-brand-accent transition-colors">
+      <i class="pi pi-times"></i>
+    </button>
+    
+    <div class="relative max-w-6xl w-full h-full flex flex-col items-center justify-center" (click)="$event.stopPropagation()">
+      <img 
+        [src]="item.src" 
+        [alt]="item.title"
+        class="max-w-full max-h-[80vh] object-contain shadow-2xl"
+      />
+      <div class="mt-8 text-center">
+        <span class="text-brand-accent text-xs uppercase tracking-[0.3em] mb-2 block font-bold">{{ item.category }}</span>
+        <h4 class="text-brand-text text-2xl font-light tracking-tight">{{ item.title }}</h4>
+      </div>
+    </div>
+  </div>
+</section>

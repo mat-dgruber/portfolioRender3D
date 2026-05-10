@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "category": "Interiores",
+    "title": "Apartamento Luxo Vila Nova",
+    "src": "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?q=80&w=1200",
+    "thumb": "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?q=80&w=600"
+  },
+  {
+    "id": 2,
+    "category": "Exteriores",
+    "title": "Casa de Campo Contemporânea",
+    "src": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1200",
+    "thumb": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=600"
+  },
+  {
+    "id": 3,
+    "category": "Interiores",
+    "title": "Cozinha Integrada Industrial",
+    "src": "https://images.unsplash.com/photo-1600566752355-397921163bc9?q=80&w=1200",
+    "thumb": "https://images.unsplash.com/photo-1600566752355-397921163bc9?q=80&w=600"
+  },
+  {
+    "id": 4,
+    "category": "Plantas Humanizadas",
+    "title": "Loft Minimalista",
+    "src": "https://images.unsplash.com/photo-1541888946425-d81bb1930060?q=80&w=1200",
+    "thumb": "https://images.unsplash.com/photo-1541888946425-d81bb1930060?q=80&w=600"
+  },
+  {
+    "id": 5,
+    "category": "Exteriores",
+    "title": "Edifício Residencial Horizonte",
+    "src": "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1200",
+    "thumb": "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=600"
+  },
+  {
+    "id": 6,
+    "category": "Animações",
+    "title": "Tour Virtual Garden",
+    "src": "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?q=80&w=1200",
+    "thumb": "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?q=80&w=600"
+  }
+]

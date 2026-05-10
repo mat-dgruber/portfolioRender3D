@@ -1,0 +1,65 @@
+<section id="antes-depois" class="py-32 bg-brand-surface border-y border-brand-border overflow-hidden">
+  <div class="container mx-auto px-6">
+    <div class="max-w-4xl mx-auto text-center mb-20">
+      <span class="text-brand-accent text-xs uppercase tracking-[0.4em] mb-4 block font-bold">A Transformação</span>
+      <h2 class="text-3xl md:text-5xl font-light text-brand-text mb-6">Da visão técnica à realidade palpável.</h2>
+      <p class="text-brand-muted max-w-xl mx-auto">
+        Arraste para comparar o projeto inicial com a nossa materialização fotorrealista.
+      </p>
+    </div>
+
+    <div class="relative max-w-5xl mx-auto aspect-video cursor-ew-resize select-none overflow-hidden group shadow-2xl rounded-lg"
+         (mousemove)="onMove($event)"
+         (touchmove)="onMove($event)">
+      
+      <!-- After Image (Background) -->
+      <img 
+        src="https://images.unsplash.com/photo-1600566752355-397921163bc9?q=80&w=2070&auto=format&fit=crop" 
+        alt="Render finalizado e fotorrealista"
+        class="absolute inset-0 w-full h-full object-cover"
+      />
+
+      <!-- Before Image (Clipped) -->
+      <div 
+        class="absolute inset-0 w-full h-full overflow-hidden"
+        [style.clip-path]="'inset(0 ' + (100 - position()) + '% 0 0)'">
+        <img 
+          src="https://images.unsplash.com/photo-1541888946425-d81bb1930060?q=80&w=2070&auto=format&fit=crop" 
+          alt="Planta técnica original"
+          class="absolute inset-0 w-full h-full object-cover"
+        />
+      </div>
+
+      <!-- Handle / Divider -->
+      <div 
+        class="absolute top-0 bottom-0 w-1 bg-brand-accent/50 z-20"
+        [style.left]="position() + '%'">
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-12 h-12 bg-brand-accent rounded-full flex items-center justify-center text-brand-bg shadow-xl scale-90 group-hover:scale-100 transition-transform">
+          <i class="pi pi-arrows-h text-xl"></i>
+        </div>
+      </div>
+
+      <!-- Accessibility Range Input -->
+      <input 
+        type="range" 
+        min="0" 
+        max="100" 
+        [value]="position()" 
+        (input)="onInputChange($event)"
+        class="absolute inset-0 opacity-0 cursor-ew-resize z-30"
+        aria-label="Controle de comparação entre planta e render"
+        aria-valuemin="0"
+        aria-valuemax="100"
+        [aria-valuenow]="position()"
+      />
+
+      <!-- Labels -->
+      <div class="absolute bottom-6 left-6 z-40 bg-brand-bg/60 backdrop-blur-sm px-4 py-2 text-[10px] uppercase tracking-widest text-brand-text border border-brand-accent/20 rounded pointer-events-none">
+        Original
+      </div>
+      <div class="absolute bottom-6 right-6 z-40 bg-brand-bg/60 backdrop-blur-sm px-4 py-2 text-[10px] uppercase tracking-widest text-brand-accent border border-brand-accent/20 rounded pointer-events-none">
+        Renderized
+      </div>
+    </div>
+  </div>
+</section>

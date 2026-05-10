@@ -1,0 +1,30 @@
+<header 
+  class="fixed top-0 left-0 w-full z-50 transition-all duration-300"
+  [class.bg-brand-bg/80]="isScrolled()"
+  [class.backdrop-blur-md]="isScrolled()"
+  [class.py-4]="isScrolled()"
+  [class.py-6]="!isScrolled()"
+>
+  <nav class="container mx-auto px-6 flex justify-between items-center">
+    <div class="text-brand-accent text-2xl font-light tracking-widest uppercase cursor-pointer" (click)="scrollTo('hero')">
+      Studio<span class="font-bold">Render</span>
+    </div>
+    
+    <div class="hidden md:flex gap-8 items-center text-sm tracking-widest uppercase text-brand-text/80">
+      <a (click)="scrollTo('portfolio')" class="hover:text-brand-accent transition-colors cursor-pointer">Portfólio</a>
+      <a (click)="scrollTo('processo')" class="hover:text-brand-accent transition-colors cursor-pointer">Processo</a>
+      <a (click)="scrollTo('faq')" class="hover:text-brand-accent transition-colors cursor-pointer">FAQ</a>
+      <button 
+        (click)="scrollTo('contato')"
+        class="border border-brand-accent px-6 py-2 text-brand-accent hover:bg-brand-accent hover:text-brand-bg transition-all duration-300"
+      >
+        Orçamento
+      </button>
+    </div>
+
+    <!-- Mobile Menu Toggle (Simplified for MVP) -->
+    <div class="md:hidden text-brand-accent">
+      <i class="pi pi-bars text-xl"></i>
+    </div>
+  </nav>
+</header>
