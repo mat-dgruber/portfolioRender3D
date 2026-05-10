@@ -10,14 +10,24 @@ import { SectionTitleComponent } from '../../../../shared/components/section-tit
   templateUrl: './faq.html',
   styles: [`
     :host { display: block; }
+    ::ng-deep .p-accordion-panel {
+      background: rgba(255, 255, 255, 0.03) !important;
+      border: 1px solid rgba(255, 255, 255, 0.05) !important;
+      border-radius: 1.5rem !important;
+      margin-bottom: 1rem !important;
+      overflow: hidden;
+      transition: all 0.3s ease;
+    }
+    ::ng-deep .p-accordion-panel:hover {
+      border-color: rgba(200, 169, 110, 0.3) !important;
+      background: rgba(255, 255, 255, 0.05) !important;
+    }
     ::ng-deep .p-accordionheader {
       background: transparent !important;
       border: none !important;
-      border-bottom: 1px solid rgba(200, 169, 110, 0.2) !important;
       color: #f0f0f0 !important;
-      padding: 1.5rem 0 !important;
+      padding: 1.5rem !important;
       box-shadow: none !important;
-      transition: all 0.3s ease;
     }
     ::ng-deep .p-accordionheader:hover {
       color: #c8a96e !important;
@@ -26,7 +36,7 @@ import { SectionTitleComponent } from '../../../../shared/components/section-tit
       background: transparent !important;
       border: none !important;
       color: #888888 !important;
-      padding: 0 !important;
+      padding: 0 1.5rem 1.5rem 1.5rem !important;
     }
   `]
 })
