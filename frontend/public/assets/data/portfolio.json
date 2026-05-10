@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "category": "Interiores",
+    "title": "Apartamento Luxo Vila Nova",
+    "src": "assets/images/portfolio/interior-luxury.png",
+    "thumb": "assets/images/portfolio/interior-luxury.png"
+  },
+  {
+    "id": 2,
+    "category": "Exteriores",
+    "title": "Casa de Campo Contemporânea",
+    "src": "assets/images/portfolio/exterior-modern.png",
+    "thumb": "assets/images/portfolio/exterior-modern.png"
+  },
+  {
+    "id": 3,
+    "category": "Interiores",
+    "title": "Cozinha Integrada Industrial",
+    "src": "assets/images/portfolio/interior-kitchen.png",
+    "thumb": "assets/images/portfolio/interior-kitchen.png"
+  },
+  {
+    "id": 4,
+    "category": "Plantas Humanizadas",
+    "title": "Loft Minimalista",
+    "src": "assets/images/portfolio/plan-humanized.png",
+    "thumb": "assets/images/portfolio/plan-humanized.png"
+  },
+  {
+    "id": 5,
+    "category": "Exteriores",
+    "title": "Edifício Residencial Horizonte",
+    "src": "assets/images/portfolio/exterior-highrise.png",
+    "thumb": "assets/images/portfolio/exterior-highrise.png"
+  },
+  {
+    "id": 6,
+    "category": "Animações",
+    "title": "Tour Virtual Garden",
+    "src": "assets/images/portfolio/animation-still.png",
+    "thumb": "assets/images/portfolio/animation-still.png"
+  }
+]
