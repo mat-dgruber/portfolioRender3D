@@ -2,12 +2,10 @@ import { Component, signal, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 
-import { SectionTitleComponent } from '../../../../shared/components/section-title/section-title';
-
 @Component({
   selector: 'app-contact',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule, SectionTitleComponent],
+  imports: [CommonModule, ReactiveFormsModule],
   templateUrl: './contact.html',
   styles: [`:host { display: block; }`]
 })
